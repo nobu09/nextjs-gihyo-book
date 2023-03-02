@@ -1,11 +1,11 @@
 // 商品のカテゴリ
-export Category = 'shoes' | 'clothes' | 'book'
+export type Category = 'shoes' | 'clothes' | 'book'
 
 // 商品の状態
-export Contidiont = 'new' | 'book'
+export type Condition = 'new' | 'book'
 
 // ユーザー
-export User = {
+export type User = {
   id: number
   username: string
   displayName: string
@@ -15,7 +15,7 @@ export User = {
 }
 
 // 商品
-export Product = {
+export type Product = {
   id: number
   category: Category
   title: string
@@ -28,6 +28,6 @@ export Product = {
 }
 
 // API Context
-export ApiContext = {
+export type ApiContext = {
   apiRootUrl: string
 }
