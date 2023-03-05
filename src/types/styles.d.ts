@@ -1,3 +1,5 @@
+import { theme } from 'themes'
+
 /**
  * Responsive プロパティ
  * CSS プロパティの値をブレークポイントごとに設定できる
@@ -15,6 +17,13 @@ export type ResponsiveProp<T> = {
  * Responsive 型は Responsive プロパティ もしくは CSS プロパティの値
  */
 export type Responsive<T> = T | ResponsiveProp<T>
+
+// Themeの型
+type AppTheme = typeof theme
+// Tyemeのキーの型
+type SpaceThemeKeys = keyof typeof theme.space
+// Themeのキーの型（SpaceThemeKeys）もしくは任意の文字列（'10px'など）
+type Space = SpaceThemeKeys | (string & {}) // &{}を書くとエディタの補完が効くようになる
 
 /**
  * Responsive 型を CSS プロパティとその値に変換
