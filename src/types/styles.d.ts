@@ -15,3 +15,13 @@ export type ResponsiveProp<T> = {
  * Responsive 型は Responsive プロパティ もしくは CSS プロパティの値
  */
 export type Responsive<T> = T | ResponsiveProp<T>
+
+/**
+ * Responsive 型を CSS プロパティとその値に変換
+ * @param propKey CSS プロパティ
+ * @param prop Responsive型
+ * @returns CSS プロパティとその値（ex.background-color:white;）
+ */
+function toPropValue<T>(propKey: string, prop?: Responsive<T>): string {
+  // 実装省略
+}
