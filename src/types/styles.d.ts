@@ -29,8 +29,13 @@ type Space = SpaceThemeKeys | (string & {}) // &{}を書くとエディタの補
  * Responsive 型を CSS プロパティとその値に変換
  * @param propKey CSS プロパティ
  * @param prop Responsive型
+ * @param theme AppTheme
  * @returns CSS プロパティとその値（ex.background-color:white;）
  */
-function toPropValue<T>(propKey: string, prop?: Responsive<T>): string {
+function toPropValue<T>(
+  propKey: string,
+  prop?: Responsive<T>,
+  theme?: AppTheme
+): string {
   // 実装省略
 }
