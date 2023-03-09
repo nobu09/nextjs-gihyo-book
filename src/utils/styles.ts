@@ -38,7 +38,7 @@ const BREAKPOINTS: { [key: string]: string } = {
 function toPropValue<T>(
   propKey: string,
   prop?: Responsive<T>,
-  theme?: AppTheme,
+  theme?: AppTheme
 ): string {
   if (prop === undefined) return undefined
 
@@ -51,8 +51,8 @@ function toPropValue<T>(
           `${propKey}: ${toThemeValueIfNeeded(
             propKey,
             prop[responsiveKey],
-            theme,
-          )}`,
+            theme
+          )}`
         )
       } else if (
         responsiveKey === 'sm' ||
@@ -64,7 +64,7 @@ function toPropValue<T>(
         const style = `${propKey}: ${toThemeValueIfNeeded(
           propKey,
           prop[responsiveKey],
-          theme,,
+          theme
         )};`
         result.push(`@media screen and (min-width: ${breakpoint}) {${style}}`)
       }
@@ -73,3 +73,25 @@ function toPropValue<T>(
   }
   return `${propKey}: ${toThemeValueIfNeeded(propKey, prop, theme)};`
 }
+
+const SPACE_KEYS = new Set([
+  'margin',
+  'margin-top',
+  'margin-left',
+  'margin-bottom',
+  'margin-right',
+  'padding',
+  'padding-top',
+  'padding-left',
+  'padding-bottom',
+  'padding-right',
+])
+
+const COLOR_KEYS = new Set(['color', 'background-color'])
+const FONT_SIZE_KEYS = new Set(['fond-size'])
+const LINE_SPACING_KEYS = new Set(['letter-spacing'])
+const LINE_HEIGHT_KEYS = new Set(['line-height'])
+
+/**
+ * Themeに指定されたCSSプロパティの値に変換
+ */
