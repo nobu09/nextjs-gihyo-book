@@ -136,4 +136,25 @@ function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   ) {
     return theme.lineHeights[value]
   }
+
+  return value
+}
+
+function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
+  return (
+    prop &&
+    (prop.base !== undefined ||
+      prop.sm !== undefined ||
+      prop.md !== undefined ||
+      prop.lg !== undefined ||
+      prop.xl !== undefined)
+  )
+}
+
+function isSpaceThemeKeys(prop: any, theme: AppTheme): prop is SpaceThemeKeys {
+  return Object.keys(theme.space).filter((key) => key == prop).length > 0
+}
+
+function isColorThemeKeys(prop: any, theme: AppTheme): prop is ColorThemeKeys {
+  return Object.keys(theme.colors).filter((key) => key == prop).length > 0
 }
