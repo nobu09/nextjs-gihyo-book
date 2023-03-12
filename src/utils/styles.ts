@@ -99,4 +99,41 @@ const LINE_HEIGHT_KEYS = new Set(['line-height'])
  * @param theme AppTheme
  * @return CSSプロパティとその値（ex. background-color: white;)
  */
-function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {}
+function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
+  if (
+    theme &&
+    theme.space &&
+    SPACE_KEYS.has(propKey) &&
+    isSpaceThemeKeys(value, theme)
+  ) {
+    return theme.space[value]
+  } else if (
+    theme &&
+    theme.colors &&
+    COLOR_KEYS.has(propKey) &&
+    isColorThemeKeys(value, theme)
+  ) {
+    return theme.colors[value]
+  } else if (
+    theme &&
+    theme.fontSizes &&
+    FONT_SIZE_KEYS.has(propKey) &&
+    isFontSizeThemeKeys(value, theme)
+  ) {
+    return theme.fontSizes[value]
+  } else if (
+    theme &&
+    theme.letterSpacings &&
+    LINE_SPACING_KEYS.has(propKey) &&
+    isLetterSpacingThemeKeys(value, theme)
+  ) {
+    return theme.letterSpacings[value]
+  } else if (
+    theme &&
+    theme.lineHeights &&
+    LINE_HEIGHT_KEYS.has(propKey) &&
+    isLineHeightThemeKeys(value, theme)
+  ) {
+    return theme.lineHeights[value]
+  }
+}
