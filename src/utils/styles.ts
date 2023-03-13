@@ -158,3 +158,26 @@ function isSpaceThemeKeys(prop: any, theme: AppTheme): prop is SpaceThemeKeys {
 function isColorThemeKeys(prop: any, theme: AppTheme): prop is ColorThemeKeys {
   return Object.keys(theme.colors).filter((key) => key == prop).length > 0
 }
+
+function isFontSizeThemeKeys(
+  prop: any,
+  theme: AppTheme
+): prop is FontSizeThemeKeys {
+  return Object.keys(theme.fontSizes).filter((key) => key == prop).length > 0
+}
+
+function isLetterSpacingThemeKeys(
+  prop: any,
+  theme: AppTheme
+): prop is LetterSpacingThemeKeys {
+  return (
+    Object.keys(theme.letterSpacings).filter((key) => key == prop).length > 0
+  )
+}
+
+function isLineHeightThemeKeys(
+  prop: any,
+  theme: AppTheme
+): prop is LineHeightThemeKeys {
+  return Object.keys(theme.lineHeights).filter((key) => key == prop).length > 0
+}
