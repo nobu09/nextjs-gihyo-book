@@ -17,3 +17,39 @@ export type ResponsiveProp<T> = {
  * Responsive 型は Responsive プロパティ もしくは CSS プロパティの値
  */
 export type Responsive<T> = T | ResponsiveProp<T>
+
+/**
+ * Flex
+ */
+type SelfPosition =
+  | 'center'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'self-end'
+  | 'self-start'
+  | 'start'
+
+type ContentPosition = 'center' | 'end' | 'flex-end' | 'flex-start' | 'start'
+
+type ContentDistribution =
+  | 'space-around'
+  | 'space-between'
+  | 'space-evenly'
+  | 'stretch'
+
+type CSSPropertyGlobals =
+  | '-moz-initial'
+  | 'inherit'
+  | 'initial'
+  | 'revert'
+  | 'unset'
+
+export type CSSPropertyAlignItems =
+  | CSSPropertyGlobals
+  | SelfPosition
+  | 'baseline'
+  | 'normal'
+  | 'stretch'
+  // コードの自動補完
+  | (string & {})
