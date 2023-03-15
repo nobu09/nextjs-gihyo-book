@@ -53,3 +53,35 @@ export type CSSPropertyAlignItems =
   | 'stretch'
   // コードの自動補完
   | (string & {})
+
+export type CSSPropertyAlignContent =
+  | CSSPropertyGlobals
+  | ContentDistribution
+  | 'center'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'start'
+  | 'baseline'
+  | 'normal'
+  | (string & {})
+
+export type CSSPropertyJustifyItems =
+  | CSSPropertyGlobals
+  | SelfPosition
+  | 'baseline'
+  | 'left'
+  | 'legacy'
+  | 'normal'
+  | 'right'
+  | 'stretch'
+  | (string & {})
+
+export type CSSPropertyJustifyContent =
+  | CSSPropertyGlobals
+  | ContentDistribution
+  | ContentPosition
+  | 'left'
+  | 'normal'
+  | 'right'
+  | (string & {})
