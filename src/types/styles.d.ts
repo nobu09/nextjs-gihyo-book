@@ -85,3 +85,9 @@ export type CSSPropertyJustifyContent =
   | 'normal'
   | 'right'
   | (string & {})
+
+export type CSSPropertyFlexWrap =
+  | CSSPropertyGlobals
+  | 'nowrap'
+  | 'wrap'
+  | 'wrap-reverse'
