@@ -91,3 +91,30 @@ export type CSSPropertyFlexWrap =
   | 'nowrap'
   | 'wrap'
   | 'wrap-reverse'
+
+export type CSSPropertyFlexDirection =
+  | CSSPropertyGlobals
+  | 'column'
+  | 'column-reverse'
+  | 'row'
+  | 'row-reverse'
+
+export type CSSPropertyJustifySelf =
+  | CSSPropertyGlobals
+  | SelfPosition
+  | 'auto'
+  | 'baseline'
+  | 'left'
+  | 'normal'
+  | 'right'
+  | 'stretch'
+  | (string & {})
+
+export type CSSPropertyAlignSelf =
+  | CSSPropertyGlobals
+  | SelfPosition
+  | 'auto'
+  | 'baseline'
+  | 'normal'
+  | 'stretch'
+  | (string & {})
