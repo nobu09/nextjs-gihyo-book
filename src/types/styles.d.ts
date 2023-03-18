@@ -124,7 +124,18 @@ export type CSSPropertyAlignSelf =
  */
 type GridLine = 'auto' | (string & {})
 
-export type CSSPropertyGridColumn = 
+export type CSSPropertyGridColumn =
   | CSSPropertyGlobals
   | GridLine
   | (string & {})
+
+export type CSSPropertyGridRow = CSSPropertyGlobals | GridLine | (string & {})
+
+export type CSSPropertyGridAutoFlow =
+  | CSSPropertyGlobals
+  | 'column'
+  | 'dense'
+  | 'row'
+  | (string & {})
+
+export type CSSPropertyGridArea = CSSPropertyGlobals | GridLine | (string & {})
