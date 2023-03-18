@@ -118,3 +118,13 @@ export type CSSPropertyAlignSelf =
   | 'normal'
   | 'stretch'
   | (string & {})
+
+/**
+ * Grid
+ */
+type GridLine = 'auto' | (string & {})
+
+export type CSSPropertyGridColumn = 
+  | CSSPropertyGlobals
+  | GridLine
+  | (string & {})
