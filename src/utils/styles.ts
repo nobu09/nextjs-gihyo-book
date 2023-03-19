@@ -14,11 +14,11 @@ type LetterSpacingThemeKeys = keyof typeof theme.letterSpacings
 type LineHeightThemeKeys = keyof typeof theme.lineHeights
 
 // Themeのキーの型（SpaceThemeKeys）もしくは任意の文字列（'10px'など）
-type Space = SpaceThemeKeys | (string & {}) // &{}を書くとエディタの補完が効くようになる
-type Color = ColorThemeKeys | (string & {})
-type FontSize = FontSizeThemeKeys | (string & {})
-type LetterSpacings = LetterSpacingThemeKeys | (string & {})
-type LineHeight = LineHeightThemeKeys | (string & {})
+export type Space = SpaceThemeKeys | (string & {}) // &{}を書くとエディタの補完が効くようになる
+export type Color = ColorThemeKeys | (string & {})
+export type FontSize = FontSizeThemeKeys | (string & {})
+export type LetterSpacings = LetterSpacingThemeKeys | (string & {})
+export type LineHeight = LineHeightThemeKeys | (string & {})
 
 // ブレークポイント
 const BREAKPOINTS: { [key: string]: string } = {
@@ -35,7 +35,7 @@ const BREAKPOINTS: { [key: string]: string } = {
  * @param theme AppTheme
  * @returns CSS プロパティとその値（ex.background-color:white;）
  */
-function toPropValue<T>(
+export function toPropValue<T>(
   propKey: string,
   prop?: Responsive<T>,
   theme?: AppTheme
