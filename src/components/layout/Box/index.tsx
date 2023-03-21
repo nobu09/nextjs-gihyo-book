@@ -6,7 +6,7 @@ import { toPropValue, Color, Space } from 'utils/styles'
 // Box がとりうるプロパティを列挙
 export type BoxProps = {
   color?: Responsive<Color>
-  backgroudColor?: Responsive<Color>
+  backgroundColor?: Responsive<Color>
   width?: Responsive<string>
   height?: Responsive<string>
   minWidth?: Responsive<string>
@@ -31,6 +31,20 @@ export type BoxProps = {
  * レイアウトの調整に利用する
  * ${(props) => toPropValue('color', props.color, props.theme)}
  */
-const Box = styled.div<BoxProps>``
+const Box = styled.div<BoxProps>`
+  ${(props) => toPropValue('color', props.color, props.theme)}
+  ${(props) =>
+    toPropValue('background-color', props.backgroundColor, props.theme)}
+  ${(props) => toPropValue('width', props.width, props.theme)}
+  ${(props) => toPropValue('height', props.height, props.theme)}
+  ${(props) => toPropValue('min-width', props.minWidth, props.theme)}
+  ${(props) => toPropValue('min-height', props.minHeight, props.theme)}
+  ${(props) => toPropValue('display', props.display, props.theme)}
+  ${(props) => toPropValue('border', props.border, props.theme)}
+  ${(props) => toPropValue('overflow', props.overflow, props.theme)}
+  ${(props) => toPropValue('margin', props.margin, props.theme)}
+  ${(props) => toPropValue('margin-top', props.marginTop, props.theme)}
+  ${(props) => toPropValue('margin-left', props.marginLeft, props.theme)}
+`
 
 export default Box
