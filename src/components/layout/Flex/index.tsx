@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components'
+import Box, { BoxProps } from 'components/layout/Box'
 import type {
   Responsive,
   CSSPropertyAlignItems,
@@ -20,4 +21,10 @@ type FlexProps = BoxProps & {
   justifyItems?: Responsive<CSSPropertyJustifyItems>
   flexWrap?: Responsive<CSSPropertyFlexWrap>
   flexBasis?: Responsive<string>
+  flexDirection?: Responsive<CSSPropertyFlexDirection>
+  flexGrow?: Responsive<string>
+  flexShrink?: Responsive<string>
+  justifySelf?: Responsive<CSSPropertyJustifySelf>
+  alignSelf?: Responsive<CSSPropertyAlignSelf>
+  order?: Responsive<string>
 }
