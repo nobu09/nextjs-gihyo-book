@@ -17,4 +17,10 @@ type GridProps = BoxProps & {
   gridColumn?: Responsive<CSSPropertyGridColumn>
   gridRow?: Responsive<CSSPropertyGridRow>
   gridAutoFlow?: Responsive<CSSPropertyGridAutoFlow>
+  gridAutoColumns?: Responsive<string>
+  gridAutoRows?: Responsive<string>
+  gridTemplateColumns?: Responsive<string>
+  gridTemplateRows?: Responsive<string>
+  gridTemplateAreas?: Responsive<CSSPropertyGridArea>
+  gridArea?: Responsive<string>
 }
